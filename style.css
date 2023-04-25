@@ -1,0 +1,36 @@
+@font-face {
+    font-family: fast-hand;
+    src: url(fast-hand-font/FastHand-lgBMV.ttf);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --primary-color: #FF6584;
+    --secondary-color: #ffffff;
+    --teriary-color: #000000;
+    --light-text: rgb(78, 78, 78);
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 300;
+    font-family: fast-hand;
+    color: black;
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: 200;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 18px;
+}

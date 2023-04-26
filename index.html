@@ -8,13 +8,69 @@
     <title>Library</title>
 </head>
 <body>
-    <div class="header">
-        <img src="img/rocket-logo.svg" alt="Rocket Logo">
-        <h1>Library</h1>
-    </div>
+    <div id="overlay"></div>
     <div class="container">
-        <div class="addNew">
-            <img src="img/plus.svg" alt="Plus symbol">
+        <div class="header">
+            <img src="img/rocket-logo.svg" alt="Rocket Logo">
+            <h1>Library</h1>
+        </div>
+        <div class="dashboard">
+            <div class="card" id="addNew">
+                <img src="img/plus.svg" alt="Plus symbol">
+            </div>
+
+            <div class="card book">
+                <h3>Crime and Punishment</h3>
+                <h4>by Fyodor Dostoevsky</h4>
+                <p>456 Pages</p>
+                <div>
+                    <p>Read:</p>
+                    <div class="read-switch">
+                        <div class="yes"><p>Yes</p></div>
+                        <div class="no"><p>No</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="popup-modal" class="hidden">
+            <form action="#" id="modal-form">
+                <h2>
+                    <legend>New Book</legend>
+                </h2>
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" placeholder="Enter Name" required>
+                </div>
+
+                <div>
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author" placeholder="Enter Author" required>
+                </div>
+
+                <div>
+                    <label for="pages">Number of Pages:</label>
+                    <input type="number" id="numOfPages" name="pages" placeholder="0" required>
+                </div>
+
+                
+                <div id="modal-radio">
+                    <p>Have you read it?</p>
+
+                    <div class="modal-radio-input-pair">
+                        <input type="radio" id="yes" name="hasRead" value="Yes" required>
+                        <label for="yes">Yes</label>
+                    </div>
+
+                    <div class="modal-radio-input-pair">
+                        <input type="radio" id="no" name="hasRead" value="No">
+                        <label for="no">No</label>
+                    </div>
+
+                </div>
+
+                <input type="submit" id="modal-submit" value="Submit">
+
+            </form>
         </div>
     </div>
 </body>

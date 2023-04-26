@@ -16,21 +16,184 @@
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 80px;
     font-weight: 300;
     font-family: fast-hand;
     color: black;
 }
 
 h2 {
-    font-size: 26px;
+    font-size: 40px;
     font-weight: 200;
 }
 
+h3 {
+    font-size: 30px;
+    font-weight: 200px;
+}
 h4 {
     font-size: 20px;
 }
 
 h5 {
     font-size: 18px;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+}
+
+.header {
+    height: 100px;
+    width: 100%;
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+}
+
+.header img {
+    width: 100px;
+    height: auto;
+    margin-left: 20px;
+}
+.dashboard {
+    width: 100%;
+    height: 100%;
+    padding: 60px;
+    background-image: url(/img/stars-and-space.jpg);
+    background-size: contain;
+    background-repeat: repeat;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    width: 250px;
+    height: 250px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    border-left-style: solid;
+    border-left-color: var(--primary-color);
+    border-left-width: 8px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.book {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#addNew:hover {
+    border-left-color: var(--light-text);
+}
+
+#addNew img {
+    width: 150px;
+    height: auto;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+}
+
+#popup-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#popup-modal form {
+    height: 350px;
+    padding:  10px 20px;
+    margin-left: -20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#popup-modal form div input {
+    width: 300px;
+    font-size: 20px;
+    color: var(--teriary-color);
+    border: none;
+    border-bottom: 1px solid var(--teriary-color);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#popup-modal form div {
+    display: flex;
+    flex-direction: column;
+}
+
+#popup-modal form #modal-radio {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#popup-modal form #modal-radio .modal-radio-input-pair {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+#popup-modal form #modal-radio input {
+    width: 12px;
+    margin-right: 5px;
+}
+
+#modal-submit {
+    border: none; 
+    width: 200px;
+    height: 50px;
+    color: var(--teriary-color);
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+#modal-submit:hover {
+    background-color: var(--teriary-color);
+    color: var(--secondary-color);
+}
+
+#popup-modal form div input::placeholder {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+#popup-modal form div input:focus {
+    outline: none;
+    border-bottom: 1px solid #FF6584 !important;
+}
+
+.error {
+    border: 1px solid #FF6584 !important;
+}
+
+.hidden {
+    display: none;
 }

@@ -41,7 +41,7 @@ h5 {
 
 .container {
     width: 100%;
-    height: 100vh;
+    overflow: hidden;
 }
 
 .header {
@@ -67,8 +67,9 @@ h5 {
     background-repeat: repeat;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, 220px);
+    grid-template-rows: 210px;
+    gap: 75px;
 }
 
 .card {
@@ -82,17 +83,31 @@ h5 {
     display: grid;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.card h3 {
+    border-bottom: solid 2px var(--light-text);
 }
 
 .book {
+    height: 230px;
+    width: 210px;
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
 }
 
-#addNew:hover {
+.book .inputToggles {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card:hover {
     border-left-color: var(--light-text);
 }
 
@@ -109,7 +124,6 @@ h5 {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
-    display: none;
 }
 
 #popup-modal {
@@ -121,6 +135,7 @@ h5 {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 2;
 }
 
 #popup-modal form {
@@ -190,10 +205,75 @@ h5 {
     border-bottom: 1px solid #FF6584 !important;
 }
 
+.removeBtn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.removeBtn img {
+    width: 20px;
+    height: auto;
+}
+
 .error {
     border: 1px solid #FF6584 !important;
 }
 
 .hidden {
     display: none;
+}
+
+/* Toggle */
+
+.toggle {
+    cursor: pointer;
+    display: inline-block;
+}
+  
+.toggle-switch {
+    display: inline-block;
+    background: #ccc;
+    border-radius: 16px;
+    width: 58px;
+    height: 32px;
+    position: relative;
+    vertical-align: middle;
+    transition: background 0.25s;
+}
+.toggle-switch:before, .toggle-switch:after {
+    content: "";
+}
+.toggle-switch:before {
+    display: block;
+    background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: left 0.25s;
+}
+.toggle:hover .toggle-switch:before {
+    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.toggle-checkbox:checked + .toggle-switch {
+    background: #56c080;
+}
+.toggle-checkbox:checked + .toggle-switch:before {
+    left: 30px;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+.toggle-label {
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
 }
